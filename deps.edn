@@ -2,7 +2,8 @@
  :deps {org.clojure/clojure {:mvn/version "1.10.1"}
         ring {:mvn/version "1.8.0"}}
  :aliases
- {:test {:extra-paths ["test"]
+ {:main {:main-opts ["-m" "eu.teod.heimdall"]}
+  :test {:extra-paths ["test"]
          :extra-deps {org.clojure/test.check {:mvn/version "0.10.0"}}}
   :runner
   {:extra-deps {com.cognitect/test-runner

@@ -25,7 +25,7 @@
 
 (defn restart!
   ([]
-   (start! {}))
+   (restart! {}))
   ([opts]
    (let [opts (merge {:port 3000
                       :join? false}
@@ -36,9 +36,12 @@
 (comment
   (restart!)
   (stop!)
+
   )
 
 (defn -main
   "I don't do a whole lot ... yet."
   [& args]
-  (println "Hello, World!"))
+  (restart! {:port (or (some-> "PORT" System/getenv Long/parseLong)
+                       5000)
+             :join? true}))
