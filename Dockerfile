@@ -1,6 +1,10 @@
 FROM clojure:openjdk-11-tools-deps
 
-# Fetch deps when building container, not at runtime
+# Fetch deps before copying source for better caching
+COPY deps.edn .
 RUN clojure -e :deps-fetched
 
-CMD clojure -A:main
+# Then copy source
+COPY src src
+
+CMD ["clojure", "-A:main"]
