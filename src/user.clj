@@ -2,4 +2,5 @@
 
 (defn dev []
   (require 'dev)
-  (in-ns 'dev))
+  (in-ns 'dev)
+  :loaded)

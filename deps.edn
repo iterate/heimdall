@@ -5,6 +5,10 @@
         ;; Crux
         juxt/crux-core {:mvn/version "20.04-1.8.1-alpha"}
         juxt/crux-rocksdb {:mvn/version "20.04-1.8.1-alpha"}
+
+        ;; Integrant
+        integrant/integrant {:mvn/version "0.8.0"}
+        integrant/repl {:mvn/version "0.3.1"}
         }
  :aliases
  {:main {:main-opts ["-m" "eu.teod.heimdall"]}

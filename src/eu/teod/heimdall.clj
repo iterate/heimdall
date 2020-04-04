@@ -1,8 +1,8 @@
 (ns eu.teod.heimdall
   (:gen-class)
   (:require [ring.adapter.jetty]
-            [crux.api :as crux]
-            [clojure.java.io :as io]))
+            [integrant.core :as ig]
+            ))
 
 (comment
   (remove-ns (-> *ns* str symbol))
