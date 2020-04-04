@@ -5,7 +5,7 @@
   (prn ::handler)
   {:status 200
    :headers {"Content-Type" "text/html"}
-   :body "Hello World22"})
+   :body "Hello World44"})
 
 (defmethod ig/init-key :eu.teod.heimdall/handler [_ opts]
   (prn ::init)

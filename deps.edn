@@ -12,7 +12,9 @@
         org.clojure/tools.namespace {:mvn/version "1.0.0"}
         }
  :aliases
- {:main {:main-opts ["-m" "eu.teod.heimdall"]}
+ {:main {:main-opts ["-m" "eu.teod.heimdall.main"]}
+
+  ;; Test
   :test {:extra-paths ["test"]
          :extra-deps {org.clojure/test.check {:mvn/version "0.10.0"}}}
   :runner

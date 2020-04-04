@@ -1,6 +1,11 @@
 ;; System config for Integrant
 
 ;; port is overridden if the PORT env var is set
-{:eu.teod.heimdall/server {:port 8080
-                           :handler #ig/ref :eu.teod.heimdall/handler}
- :eu.teod.heimdall/handler {}}
+{:eu.teod.heimdall/server  {:port 8080
+                            :handler #ig/ref :eu.teod.heimdall/handler}
+ :eu.teod.heimdall/handler {}
+ :eu.teod.heimdall/db      {:crux.node/topology [crux.standalone/topology
+                                                 crux.kv.rocksdb/kv-store]
+                            :db-dir-path "db"
+                            :crux.kv/db-dir (str (io/file "db"))}
+ }
