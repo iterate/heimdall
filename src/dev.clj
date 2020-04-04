@@ -6,6 +6,9 @@
    [integrant.repl :refer [clear halt go init prep reset]]
    [integrant.repl.state :refer [config system]]
 
+   ;; system
+   [eu.teod.heimdall.server]
+   [eu.teod.heimdall.handler]
    ))
 
 ;; (defn go [])

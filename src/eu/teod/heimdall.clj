@@ -19,9 +19,10 @@
    :headers {"Content-Type" "text/html"}
    :body "Hello World22"})
 
-(defmethod ig/init-key ::handler [_ opts]
-  (prn ::init)
-  #'handler)
+
+;; (defmethod ig/init-key ::handler [_ opts]
+;;   (prn ::init)
+;;   #'handler)
 
 (defonce server (atom nil))
 
