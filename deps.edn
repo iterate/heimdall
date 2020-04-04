@@ -9,6 +9,7 @@
         ;; Integrant
         integrant/integrant {:mvn/version "0.8.0"}
         integrant/repl {:mvn/version "0.3.1"}
+        org.clojure/tools.namespace {:mvn/version "1.0.0"}
         }
  :aliases
  {:main {:main-opts ["-m" "eu.teod.heimdall"]}
