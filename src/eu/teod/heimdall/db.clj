@@ -35,8 +35,22 @@
 (defmethod ig/init-key :eu.teod.heimdall/db [_ {:keys [db-dir-path] :as opts}]
   (prn ::init)
   (let [opts (merge (select-keys opts [:crux.node/topology])
-                         {:crux.kv/db-dir (str (io/file db-dir-path))})]
+                    {:crux.kv/db-dir (str (io/file db-dir-path))})]
     (crux/start-node opts)))
 
 (defmethod ig/halt-key! :eu.teod.heimdall/db [_ node]
   (.close node))
+
+;; as-of now, these only work for the in-memory option. We'd like to use a full
+;; set of connection options, possibly loaded from environment variables.
+
+;; But first, we need to see if we're able to connect.
+
+(comment
+  (System/getenv "PATH")
+
+  (require '[environ.core :refer [env]])
+
+  env
+  )
+

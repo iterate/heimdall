@@ -1,2 +1,6 @@
 ;; dev config overrideover
-{}
+{:eu.teod.heimdall/db      {:crux.node/topology [crux.standalone/topology
+                                                 crux.kv.rocksdb/kv-store]
+                            :db-dir-path "db"
+                            :crux.kv/db-dir (str (io/file "db"))}
+ }
