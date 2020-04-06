@@ -20,7 +20,7 @@
 (defn override-env-vars [conf]
   (cond-> conf
     (some? (System/getenv "PORT"))
-    #_x (assoc-in [::heimdall/server :port] (-> (System/getenv "PORT") Long/parseLong))
+    #__ (assoc-in [::heimdall/server :port] (Long/parseLong (System/getenv "PORT")))
     ;; TODO assoc in postgreSQL path
     ))
 
