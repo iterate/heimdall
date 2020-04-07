@@ -1,6 +1,7 @@
 (ns eu.teod.heimdall)
 
-;; Mostly for references.
+;; Mostly for reference
 
-(def identifiers
-  #{::server ::handler ::db})
+(def identifiers #{::server ::handler ::db})
+(def deploy-url-test "https://heimdall.test.iterate.no/")
+(def local-url "http://localhost:8080/")

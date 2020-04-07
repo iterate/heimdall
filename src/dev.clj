@@ -21,3 +21,7 @@
 (comment
   (read-config)
   )
+
+(comment
+  ;; How does environ work?
+  )
