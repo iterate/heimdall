@@ -3,7 +3,7 @@
             [clojure.pprint :refer [pprint]]
             [environ.core :refer [env]]
             [eu.teod.heimdall.util :as util]
-            [clojure.ed|]))
+            [clojure.edn]))
 
 (def admin-token
   #uuid "612e9390-540b-4e3c-8314-c7375bb33080")

@@ -32,16 +32,22 @@
   ;; => "Hello, world!"
 
   (-> (http/get (str heimdall/local-url "/admin/env")
-                {:headers {:x-admin-token (str eu.teod.heimdall.handler/admin-token)}})
+                {:headers {:x-admin-token (str eu.teod.heimdall.handler/admin-token)}
+                 })
       :body
       clojure.edn/read-string
       :env
       keys
       )
 
-  (-> (http/get (str heimdall/local-url "/admin/env")
-                {:headers {:x-admin-token "blabla"}})
-      :body)
+  (-> (http/get (str heimdall/deploy-url-test "/admin/env")
+                {:headers {:x-admin-token (str eu.teod.heimdall.handler/admin-token)}
+                 :insecure? true})
+      :body
+      clojure.edn/read-string
+      :env
+      keys
+      )
 
   (str eu.teod.heimdall.handler/admin-token)
   )
