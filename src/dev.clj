@@ -9,14 +9,19 @@
    ;; system
    [eu.teod.heimdall.server]
    [eu.teod.heimdall.handler]
+   [eu.teod.heimdall.config]
    ))
 
 ;; (defn go [])
 
+;; TODO
+;; Adopt to "dev usage"
+;; Does currently not use dev setup at all!
+
 (defn read-config []
   (ig/read-string (slurp (io/resource "eu/teod/heimdall/config.edn"))))
 
-(integrant.repl/set-prep! #'read-config)
+(integrant.repl/set-prep! #'eu.teod.heimdall.config/dev-conf)
 
 (comment
   (read-config)

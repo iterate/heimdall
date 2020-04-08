@@ -1,5 +1,6 @@
 (ns temp.2020-04-07
   (:require [eu.teod.heimdall :as heimdall]
+            [eu.teod.heimdall.handler]
             [clojure.edn]))
 
 (comment
@@ -31,15 +32,6 @@
       :body)
   ;; => "Hello, world!"
 
-  (-> (http/get (str heimdall/local-url "/admin/env")
-                {:headers {:x-admin-token (str eu.teod.heimdall.handler/admin-token)}
-                 })
-      :body
-      clojure.edn/read-string
-      :env
-      keys
-      )
-
   (-> (http/get (str heimdall/deploy-url-test "/admin/env")
                 {:headers {:x-admin-token (str eu.teod.heimdall.handler/admin-token)}
                  :insecure? true})
@@ -59,6 +51,7 @@
 
   env-keys
 
+  
   (def db-keys #{:db-database
                  :db-host
                  :db-password
