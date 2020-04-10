@@ -6,8 +6,7 @@
 
 (defn -main [& args]
   ;; Load Integrant handlers
-  (require '[eu.teod.heimdall.server]
-           '[eu.teod.heimdall.handler])
+  (require '[eu.teod.heimdall.system])
 
   ;; Init system
   (let [config (config/prod-conf)]
