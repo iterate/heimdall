@@ -51,12 +51,6 @@
       (jdbc/execute! conn ["SELECT 90 * 980;"])
       ))
 
-  ;; Using the jdbcUrl
-  (def crux-pg-conf {:crux.node/topology '[crux.jdbc/topology]
-                     :crux.jdbc/dbtype "postgresql"
-                     :crux.jdbc/dbname "heimdall"
-                     :crux.jdbc/jdbcUrl pg-connection-str})
-
   ;; Using jdbc properties
   (def crux-pg-conf {:crux.node/topology '[crux.jdbc/topology]
                      :crux.jdbc/dbtype "postgresql"
