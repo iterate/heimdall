@@ -11,7 +11,7 @@
 
 (defmethod ig/init-key :eu.teod.heimdall/server
   [_ {:keys [handler port]}]
-  (prn ::init)
+  (prn ::init 'port port)
   (let [conf {:port port
               :join? false}]
     (ring.adapter.jetty/run-jetty handler conf)))
