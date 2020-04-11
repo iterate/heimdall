@@ -47,18 +47,15 @@
   ([conf]
    (override-env-vars conf env))
   ([conf env]
-   (cond-> conf
-     (contains? env :port)
-     (assoc-in [::heimdall/server :port] (Long/parseLong (:port env)))
-
-     ;; TODO setup PG stuff.
-     ;; Woah, we can just hard-code it in here.
-     ;; Then we can test in-process. Nice!
-     true
-     (update ::heimdall/db (fn [crux-defaults]
-                             (let [crux-env-conf (env->crux-conf env)]
-                               (validate-crux-env-conf!  crux-env-conf)
-                               (merge crux-defaults crux-env-conf)))))))
+   (let [server-env-conf (if (contains? env :port)
+                           {:port (Long/parseLong (:port env))})
+         db-env-conf (env->crux-conf env)]
+     (validate-crux-env-conf! db-env-conf)
+     (-> conf
+         (update ::heimdall/server (fn [conf]
+                                     (merge conf server-env-conf)))
+         (update ::heimdall/db (fn [conf]
+                                 (merge conf db-env-conf)))))))
 
 (comment
   (prod-conf)

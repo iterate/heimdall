@@ -11,7 +11,7 @@
   ;; Init system
   (let [config (config/prod-conf)]
     (pprint config)
-    ;; (ig/init config)
+    (ig/init config)
     )
 
   ;; TODO handle shutdown?
