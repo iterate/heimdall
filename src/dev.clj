@@ -7,16 +7,15 @@
    ;; system
    [eu.teod.heimdall.system]
    [eu.teod.heimdall.config]
+   [eu.teod.heimdall :as heimdall]
    ))
 
-(integrant.repl/set-prep! #'eu.teod.heimdall.config/dev-conf)
+(defonce loader (atom #'eu.teod.heimdall.config/dev-conf))
 
-(require '[eu.teod.heimdall.system])
+(defn set-dev! []
+  (reset! loader #'eu.teod.heimdall.config/dev-conf))
 
-(comment
-  (read-config)
-  )
+(defn set-prod! []
+  (reset! loader #'eu.teod.heimdall.config/prod-conf))
 
-(comment
-  ;; How does environ work?
-  )
+(integrant.repl/set-prep! (fn [] (@loader)))

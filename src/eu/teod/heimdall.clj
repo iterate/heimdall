@@ -4,4 +4,4 @@
 
 (def identifiers #{::server ::handler ::db})
 (def deploy-url-test "https://heimdall.test.iterate.no/")
-(def local-url "http://localhost:8080/")
+(def local-url "http://localhost:8080/") ;; Duplicate source of information!
