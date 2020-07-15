@@ -1,3 +1,0 @@
-;; dev config override
-{:eu.teod.heimdall/db      {:crux.node/topology [crux.standalone/topology crux.kv.rocksdb/kv-store]
-                            :crux.kv/db-dir "db"}}

@@ -2,38 +2,69 @@
 
 FIXME: description
 
-## Installation
+## Developing
 
-Download from http://example.com/FIXME.
+### Setup
 
-## Usage
+When you first clone this repository, run:
 
-FIXME: explanation
+```sh
+lein duct setup
+```
 
-Run the project directly:
+This will create files for local configuration, and prep your system
+for the project.
 
-    $ clj -m eu.teod.heimdall
+### Environment
 
-Run the project's tests (they'll fail until you edit them):
+To begin developing, start with a REPL.
 
-    $ clj -A:test:runner
+```sh
+lein repl
+```
 
-## Options
+Then load the development environment.
 
-FIXME: listing of options this app accepts.
+```clojure
+user=> (dev)
+:loaded
+```
 
-## Examples
+Run `go` to prep and initiate the system.
 
+```clojure
+dev=> (go)
+:duct.server.http.jetty/starting-server {:port 3000}
+:initiated
+```
+
+By default this creates a web server at <http://localhost:3000>.
+
+When you make changes to your source files, use `reset` to reload any
+modified files and reset the server.
+
+```clojure
+dev=> (reset)
+:reloading (...)
+:resumed
+```
+
+### Testing
+
+Testing is fastest through the REPL, as you avoid environment startup
+time.
+
+```clojure
+dev=> (test)
 ...
+```
 
-### Bugs
+But you can also run tests through Leiningen.
 
-...
+```sh
+lein test
+```
 
-### Any Other Sections
-### That You Think
-### Might be Useful
-
-## License
+## Legal
 
 Copyright © 2020 FIXME

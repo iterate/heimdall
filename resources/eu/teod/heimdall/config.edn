@@ -1,7 +1,0 @@
-;; System config for Integrant
-
-;; port is overridden if the PORT env var is set
-{:eu.teod.heimdall/server  {:port 8080
-                            :handler #ig/ref :eu.teod.heimdall/handler}
- :eu.teod.heimdall/handler {}
- }
