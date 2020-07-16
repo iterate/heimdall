@@ -6,7 +6,8 @@
                  [duct/core "0.8.0"]
                  [duct/module.logging "0.5.0"]
                  [duct/module.sql "0.6.0"]
-                 [org.postgresql/postgresql "42.2.14"]]
+                 [org.postgresql/postgresql "42.2.14"]
+                 [seancorfield/next.jdbc "1.1.569"]]
   :plugins [[duct/lein-duct "0.12.1"]]
   :main ^:skip-aot heimdall.main
   :resource-paths ["resources" "target/resources"]

@@ -28,3 +28,11 @@
   (load "local"))
 
 (integrant.repl/set-prep! #(duct/prep-config (read-config) profiles))
+
+(defn db []
+  (get-in system [:duct.database.sql/hikaricp :spec :datasource]))
+
+(comment
+  (require '[next.jdbc :as jdbc])
+  (jdbc/execute! (db) ["SELECT 9*9;"] )
+  )
