@@ -2,6 +2,6 @@ port = 5000
 readiness_path = "/"
 
 [env.common]
-PORT=5000
+PORT = "5000"
 
 [postgres]
