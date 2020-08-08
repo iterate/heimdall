@@ -8,7 +8,7 @@
                                :username #duct/env [ "DB_USERNAME" :or  "heimdall"]
                                :password #duct/env [ "DB_PASSWORD" :or  "heimdall"]}
 
-  :duct.server.http/jetty {:port 3000
+  :duct.server.http/jetty {:port #duct/env [ "PORT" Int :or 3000 ]
                            :handler #ig/ref :heimdall/handler}
 
   :heimdall/handler {}

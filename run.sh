@@ -2,4 +2,4 @@
 set -euo pipefail
 
 ./build.sh
-docker run -p 3000:3000 "heimdall:dev"
+docker run -p 5000:5000 -e PORT=5000 "heimdall:dev"
