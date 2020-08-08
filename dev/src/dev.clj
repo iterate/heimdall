@@ -29,6 +29,9 @@
 
 (integrant.repl/set-prep! #(duct/prep-config (read-config) profiles))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;
+
 (defn db []
   (get-in system [:duct.database.sql/hikaricp :spec :datasource]))
 

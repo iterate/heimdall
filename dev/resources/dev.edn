@@ -1,3 +1,5 @@
-{:duct.database/sql
- {:connection-uri "jdbc:postgresql://localhost/heimdall?user=heimdall&password=heimdall"}
+{
+ ;; You can override DB connection parameters here or in local.edn (in .gitignore)
+ ;; :duct.database/sql
+ ;; {:connection-uri "jdbc:postgresql://localhost/heimdall?user=heimdall&password=heimdall"}
  }

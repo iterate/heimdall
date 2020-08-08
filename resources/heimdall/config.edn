@@ -1,10 +1,20 @@
 {:duct.profile/base
- {:duct.core/project-ns heimdall}
+ {:duct.core/project-ns heimdall
+
+  :duct.database.sql/hikaricp {:adapter "postgresql"
+                               :port-number #duct/env [ "DB_PORT" :or  "5432"]
+                               :server-name #duct/env [ "DB_HOST" :or  "localhost"]
+                               :database-name #duct/env [ "DB_DATABASE" :or  "heimdall"]
+                               :username #duct/env [ "DB_USERNAME" :or  "heimdall"]
+                               :password #duct/env [ "DB_PASSWORD" :or  "heimdall"]}
+  }
 
  :duct.profile/dev   #duct/include "dev"
  :duct.profile/local #duct/include "local"
  :duct.profile/prod  {}
 
  :duct.module/logging {}
+
  :duct.module/sql
- {}}
+ {}
+ }
