@@ -7,6 +7,12 @@
                                :database-name #duct/env [ "DB_DATABASE" :or  "heimdall"]
                                :username #duct/env [ "DB_USERNAME" :or  "heimdall"]
                                :password #duct/env [ "DB_PASSWORD" :or  "heimdall"]}
+
+  :duct.server.http/jetty {:port 3000
+                           :handler #ig/ref :heimdall/handler}
+
+  :heimdall/handler {}
+
   }
 
  :duct.profile/dev   #duct/include "dev"
