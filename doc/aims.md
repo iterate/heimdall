@@ -33,3 +33,7 @@ Is this like Nextjournal?
 
 > Nextjournal implements full-featured programming in the browser. They span
 > _very_ broadly. We want to take on a subset of that challenge.
+
+Do we need to start prototyping both frontend and backend?
+
+> Yes, most likely. Welcome: the bifrost. Go.
